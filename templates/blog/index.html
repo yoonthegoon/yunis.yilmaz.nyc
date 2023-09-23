@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Home</h1>
+<div class="flex flex-wrap">
+  <div class="grow">
+    <h2>Featured Posts</h2>
+    <div hx-get="{% url 'featured_posts' %}" hx-trigger="load"></div>
+  </div>
+  <div class="grow">
+    <h2>Recent Posts</h2>
+    <div hx-get="{% url 'recent_posts' %}" hx-trigger="load"></div>
+  </div>
+  <div class="grow">
+    <h2>Recently Updated</h2>
+    <div hx-get="{% url 'recently_updated_posts' %}" hx-trigger="load"></div>
+  </div>
+</div>
+{% endblock %}

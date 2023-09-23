@@ -160,6 +160,10 @@ cython_debug/
 #.idea/
 
 # project
-output.css
-staticfiles/
+.git/
+.gitignore
+dev.env
+input.css
+static/
+tailwind.config.js
 tailwindcss

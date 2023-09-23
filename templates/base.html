@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% if title %}{{ title }}{% else %}Yunis{% endif %}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href={% static 'output.css' %} />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.8.0/styles/default.min.css"
+    />
+    <link rel="icon" href="favicon.png" />
+    <script
+      src="https://unpkg.com/htmx.org@1.9.5"
+      integrity="sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.8.0/highlight.min.js"></script>
+    <script>
+      window.setInterval(() => {
+        hljs.highlightAll();
+      }, 50);
+    </script>
+  </head>
+  <body>
+    <main class="container mx-auto">
+      {% block content %}{% endblock content %}
+    </main>
+  </body>
+</html>

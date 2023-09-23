@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Home</h1>
+<blockquote>
+  👋 Hi, I'm Yunis; a
+  <span id="whoami">programmer</span>
+  {% comment %} TODO: make this cycle {% endcomment %}
+</blockquote>
+<h2>Latest Blog Post</h2>
+<div hx-get="{% url 'latest_post' %}" hx-trigger="load" hx-></div>
+<h2>Contributions</h2>
+<ul>
+  <li><a href="https://github.com/laramies/theHarvester">theHarvester</a></li>
+  <li><a href="https://github.com/jazzband/tablib">Tablib</a></li>
+  <li><a href="https://github.com/nautobot/nautobot">Nautobot</a></li>
+</ul>
+{% endblock %}

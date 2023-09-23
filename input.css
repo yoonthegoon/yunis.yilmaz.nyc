@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* headers */
+  h1 {
+    @apply text-2xl font-bold;
+  }
+
+  h2 {
+    @apply text-xl font-bold;
+  }
+
+  h3 {
+    @apply text-lg font-bold;
+  }
+
+  h4 {
+    @apply text-base font-bold;
+  }
+
+  h5 {
+    @apply text-sm font-bold;
+  }
+
+  h6 {
+    @apply text-xs font-bold;
+  }
+
+  /* lists */
+  ul {
+    @apply list-disc list-inside;
+  }
+  ol {
+    @apply list-decimal list-inside;
+  }
+
+  /* links */
+  a {
+    @apply text-blue-500 underline;
+  }
+
+  a:hover {
+    @apply text-cyan-500 underline;
+  }
+
+  a:visited {
+    @apply text-fuchsia-500 underline;
+  }
+
+  a:visited:hover {
+    @apply text-rose-500 underline;
+  }
+}

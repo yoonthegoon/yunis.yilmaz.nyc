@@ -1,0 +1,23 @@
+{% for post in posts %}
+<div class="max-w-sm rounded overflow-hidden shadow-lg">
+  <div class="px-6 py-4">
+    <h2>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </h2>
+    <p class="text-gray-500 text-base">uploaded: {{ post.created_at|date:'Y-m-d' }}</p>
+    {% if post.updated_at.year != post.created_at.year and post.updated_at.month != post.created_at.month and post.updated_at.day != post.created_at.day %}
+    <p class="text-gray-500 text-base">updated: {{ post.updated_at|date:'Y-m-d' }}</p>
+    {% endif %}
+    <p class="text-gray-700 text-base">{{ post.excerpt }}</p>
+  </div>
+  <div class="px-6 pt-4 pb-2">
+    {% for tag in post.tags.all %}
+    <a
+      class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+      href="{{ tag.url }}"
+      >#{{ tag }}</a
+    >
+    {% endfor %}
+  </div>
+</div>
+{% endfor %}

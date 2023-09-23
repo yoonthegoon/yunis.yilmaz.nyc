@@ -1,0 +1,6 @@
+{% extends 'base.html' %} {% block content %}
+<div
+  hx-get="{% url 'posts_by_tag' tag=tag %}"
+  hx-trigger="load"
+></div>
+{% endblock %}
