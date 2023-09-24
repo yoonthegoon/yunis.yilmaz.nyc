@@ -20,9 +20,26 @@
     <script type="module" src="https://md-block.verou.me/md-block.js"></script>
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.8.0/highlight.min.js"></script>
     <script>
-      window.setInterval(() => {
-        hljs.highlightAll();
-      }, 50);
+      function checkMdBlocks() {
+        const mdBlocks = document.querySelectorAll("md-block");
+        let allRendered = true;
+
+        mdBlocks.forEach((mdBlock) => {
+          if (
+            !mdBlock.hasAttribute("rendered") ||
+            mdBlock.getAttribute("rendered") !== "content"
+          ) {
+            allRendered = false;
+          }
+        });
+
+        if (allRendered) {
+          clearInterval(checkInterval);
+          hljs.highlightAll();
+        }
+      }
+
+      const checkInterval = setInterval(checkMdBlocks, 50);
     </script>
   </head>
   <body>
