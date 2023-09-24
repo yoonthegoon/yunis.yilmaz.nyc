@@ -29,7 +29,7 @@ class Post(models.Model):
         )
     
     def pre_save(self):
-        self.slug = self.slug.replace(" ", "-").lower()
+        self.slug = self.title.replace(" ", "-").lower()
 
     def save(self, *args, **kwargs):
         self.pre_save()
