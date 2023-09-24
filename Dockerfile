@@ -9,4 +9,4 @@ RUN python manage.py collectstatic --noinput
 
 EXPOSE 8000
 
-CMD gunicorn -b 0.0.0.0:8000 -w 3 project.wsgi
+CMD gunicorn -b 0.0.0.0:8000 -w 1 project.wsgi
