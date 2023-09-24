@@ -5,6 +5,7 @@ COPY . /app
 WORKDIR /app
 
 RUN python -m pip install -r requirements/production.txt
+RUN python manage.py collectstatic --noinput
 
 EXPOSE 8000
 
