@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>{{ post.title }}</h1>
+  <small class="text-body-secondary">by {{ post.author }} on {{ post.created }}</small>
+  <hr/>
+  <div id="content"></div>
+  <hr/>
+  <small class="text-body-secondary">Last updated {{ post.updated }}</small>
+  <script type="module">
+      import {marked} from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
+
+      document.getElementById('content').innerHTML =
+          marked.parse(`{{ post.content|escapejs }}`);
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+{% endblock %}

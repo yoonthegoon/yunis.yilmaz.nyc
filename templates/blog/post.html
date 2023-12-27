@@ -1,8 +1,0 @@
-{% extends 'base.html' %} {% block content %}
-<h1>{{ post.title }}</h1>
-<p class="text-gray-500">Uploaded {{ post.created_at }}</p>
-{% if post.updated_at.year != post.created_at.year and post.updated_at.month != post.created_at.month and post.updated_at.day != post.created_at.day %}
-<p class="text-gray-500">Updated {{ post.updated_at }}</p>
-{% endif %}
-<md-block>{{ post.body }}</md-block>
-{% endblock %}

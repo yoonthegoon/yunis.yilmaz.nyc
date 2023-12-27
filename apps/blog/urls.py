@@ -1,11 +1,8 @@
-from django.urls import include, path
+from django.urls import path
 
-from .views import index, post_detail, tag_detail, write_post
+from .views import BlogDetailView, BlogListView
 
 urlpatterns = [
-    path("", index, name="index"),
-    path("posts/<int:year>/<int:month>/<slug:slug>", post_detail, name="post"),
-    # path("write-post/", write_post, name="write_post"),
-    path("tag/<str:name>", tag_detail, name="tag"),
-    path("components/", include("apps.blog.components.urls")),
+    path("", BlogListView.as_view(), name="blog_list"),
+    path("post/<slug:slug>/", BlogDetailView.as_view(), name="post_detail"),
 ]
